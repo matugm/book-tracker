@@ -8,11 +8,10 @@ class TagsController < ApplicationController
 
   # GET /tags/1
   def show
-    @books = Tag.find_by(name: params[:tag_name]).books
+    @books = Tag.find_books_by_tag(params[:tag_name])
   end
 
   private
-  # Never trust parameters from the scary internet, only allow the white list through.
   def tag_params
     params.require(:tag).permit(:name)
   end

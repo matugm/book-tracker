@@ -25,6 +25,10 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.full_backtrace = false
 
+  config.after :all do
+    ActiveRecord::Base.subclasses.each(&:delete_all)
+  end
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods

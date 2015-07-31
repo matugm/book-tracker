@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature "Tag search", type: :feature do
+feature "Tag search" do
 
-  let(:book_names) {[
+  let(:books) {[
     "Eloquent Ruby",
     "The Well-Grounded Rubyist",
     "Practical Object-Oriented Design in Ruby"
@@ -15,16 +15,14 @@ RSpec.feature "Tag search", type: :feature do
     select('Ruby', :from => 'tags')
     click_link('Search')
 
-    book_names.each do |book|
-      expect(page).to have_text(book)
+    books.each do |book_title|
+      expect(page).to have_text(book_title)
     end
   end
 
   def create_books
     ruby_tag = [Tag.create(name: 'Ruby')]
 
-    Book.create(title: "Eloquent Ruby", tags: ruby_tag)
-    Book.create(title: "The Well-Grounded Rubyist", tags: ruby_tag)
-    Book.create(title: "Practical Object-Oriented Design in Ruby", tags: ruby_tag)
+    books.each { |book| Book.create(title: book, tags: ruby_tag) }
   end
 end

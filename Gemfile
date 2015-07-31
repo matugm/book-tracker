@@ -35,6 +35,8 @@ gem 'haml-rails'
 
 gem 'factory_girl_rails'
 gem 'capybara'
+
+gem 'spring-commands-rspec', group: :development
 ################
 
 
