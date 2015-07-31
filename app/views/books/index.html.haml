@@ -1,4 +1,4 @@
-%h1 Listing books
+%h1 My Book Collection
 
 %table
   %thead
@@ -12,7 +12,7 @@
       %tr
         %td= book.title
         %td= book.description
-        %td= book.tags.map { |t| link_to t.name, tag_path(t.name) }.join.html_safe
+        %td= book.tags.map { |t| link_to t.name, tag_path(t.name) }.join(',').html_safe
         %td= link_to 'Show', book
         %td= link_to 'Edit', edit_book_path(book)
         %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }

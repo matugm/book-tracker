@@ -8,11 +8,13 @@
 
   .field
     = f.label :title
+    %br
     = f.text_field :title
   .field
     = f.label :description
+    %br
     = f.text_field :description
-  .filed
+  .field
     = f.label :tag
     %p= select_tag "tags", options_from_collection_for_select(@tags, "id", "name")
   .actions

@@ -29,6 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 ###### Custom ######
 gem 'puma'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap_form'
 gem 'quiet_assets'
 gem 'rspec-rails'
 gem 'haml-rails'
