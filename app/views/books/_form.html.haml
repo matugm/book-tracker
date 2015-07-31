@@ -12,5 +12,8 @@
   .field
     = f.label :description
     = f.text_field :description
+  .filed
+    = f.label :tag
+    %p= select_tag "tags", options_from_collection_for_select(@tags, "id", "name")
   .actions
     = f.submit 'Save'

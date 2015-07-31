@@ -12,8 +12,7 @@ feature "Tag search" do
     create_books
 
     visit root_path
-    select('Ruby', :from => 'tags')
-    click_link('Search')
+    click_link('Ruby', match: :first)
 
     books.each do |book_title|
       expect(page).to have_text(book_title)
