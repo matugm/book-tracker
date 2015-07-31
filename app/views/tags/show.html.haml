@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %p
-  - @books.each do |book|
-    %p
-      %b Title:
-      = book.title
+  - if @books
+    %p= render 'book_list'
+  - else
+    %p No books found with this tag.
