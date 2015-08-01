@@ -8,11 +8,13 @@ feature "Tag search" do
     "Practical Object-Oriented Design in Ruby"
   ]}
 
-  scenario "Users can search by tag using a drop-down selection" do
+  let(:tag_name) { 'Ruby' }
+
+  scenario "Users can filter post by tag by clicking on a tag name" do
     create_books
 
-    visit root_path
-    click_link('Ruby', match: :first)
+    visit books_path
+    click_link(tag_name, match: :first)
 
     books.each do |book_title|
       expect(page).to have_text(book_title)
@@ -20,8 +22,8 @@ feature "Tag search" do
   end
 
   def create_books
-    ruby_tag = [Tag.create(name: 'Ruby')]
+    ruby_tag = Tag.create(name: tag_name)
 
-    books.each { |book| Book.create(title: book, tags: ruby_tag) }
+    books.each { |book| ruby_tag.books << Book.create(title: book) }
   end
 end
