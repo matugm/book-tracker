@@ -1,0 +1,11 @@
+eloquent:
+  title: Eloquent Ruby
+  tags: ruby
+
+grounded:
+  title: The Well-Grounded Rubyist
+  tags: ruby
+
+poodr:
+  title: Practical Object-Oriented Design in Ruby
+  tags: ruby

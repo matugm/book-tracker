@@ -21,13 +21,13 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
 
-  config.backtrace_exclusion_patterns << /gems/
-  config.run_all_when_everything_filtered = true
-  config.full_backtrace = false
+  # config.backtrace_exclusion_patterns << /gems/
+  # config.run_all_when_everything_filtered = true
+  # config.full_backtrace = false
 
-  config.after :all do
-    ActiveRecord::Base.subclasses.each(&:delete_all)
-  end
+  # config.after :all do
+  #   ActiveRecord::Base.subclasses.each(&:delete_all)
+  # end
 
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
