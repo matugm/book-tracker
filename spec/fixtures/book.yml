@@ -9,3 +9,7 @@ grounded:
 poodr:
   title: Practical Object-Oriented Design in Ruby
   tags: ruby
+
+bible:
+  title: The Linux Bible
+  tags: linux

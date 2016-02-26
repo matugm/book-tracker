@@ -1,2 +1,4 @@
 ruby:
   name: 'Ruby'
+linux:
+  name: 'Linux'
