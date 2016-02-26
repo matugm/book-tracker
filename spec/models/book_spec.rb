@@ -7,7 +7,7 @@ describe Book do
     expect(found_books.size).to eq(3)
   end
 
-  it 'finds books by tag' do
+  it 'finds books for a different tag' do
     found_books = Book.find_by_tag('Linux')
 
     expect(found_books.size).to eq(1)
